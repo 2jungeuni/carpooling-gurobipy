@@ -29,6 +29,9 @@ It is recommended to follow the installation instructions provided in the offici
 - Each passenger cannot travel directly from their pick-up location to their drop-off location when sharing the ride with other passengers. This inevitably results in detours, and our system is designed to reject matches when the detours are excessive.
   - The detour ratio is defined as the travel time of the detour divided by the travel time of a solo ride.
   - A match is rejected if the detour ratio exceeds 3.0.
+```bash
+python3 main.py
+```
 
 ---
 ## In Korea :kr:
@@ -55,3 +58,6 @@ conda activate flow
 - 승객은 다른 승객과 함께 탑승할 경우 탑승 위치에서 하차ㅇ 위치로 바로 이동할 수 없으며, 이는 필연적으로 우회 경로를 발생시킵니다. 본 시스템은 우회가 과도할 경우 매칭을 거부하도록 설계하였습니다.
   - 우회율(detour ratio)는 우회 경로의 주행 시간을 단독 주행 시 소요되는 시간으로 나눈 값으로 정의합니다.
   - 우회율 (detour ratio)이 3.0을 초과하면 매칭이 거부됩니다.
+```bash
+python3 main.py
+```
