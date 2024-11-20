@@ -34,7 +34,7 @@ python3 main.py
   - A match is rejected if the detour ratio exceeds 3.0.
 
 ---
-## In Korea :kr:
+## In Korean :kr:
 ## 설치 방법
 ### 프로젝트 다운로드
 ```bash
