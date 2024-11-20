@@ -1,0 +1,43 @@
+<routes>
+	<vType id="taxi" vClass="taxi"/>
+		<vehicle id="taxi_0" type="taxi" depart="0" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="46160244#2"/>
+		</vehicle>
+		<vehicle id="taxi_1" type="taxi" depart="10" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="5669860#2"/>
+		</vehicle>
+		<vehicle id="taxi_2" type="taxi" depart="20" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="194923769#0"/>
+		</vehicle>
+		<vehicle id="taxi_3" type="taxi" depart="50" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="991205022#1"/>
+		</vehicle>
+		<vehicle id="taxi_4" type="taxi" depart="60" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="46160330#1"/>
+		</vehicle>
+		<vehicle id="taxi_5" type="taxi" depart="70" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="47796510#0"/>
+		</vehicle>
+		<vehicle id="taxi_6" type="taxi" depart="70" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="1184480985#1"/>
+		</vehicle>
+		<vehicle id="taxi_7" type="taxi" depart="70" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="37890350#1"/>
+		</vehicle>
+		<vehicle id="taxi_8" type="taxi" depart="80" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="1230946416#1"/>
+		</vehicle>
+		<vehicle id="taxi_9" type="taxi" depart="100" line="taxi" personNumber="3">
+			<param key="has.taxi.device" value="true"/>
+			<route edges="1032502935#1"/>
+		</vehicle>
+</routes>
