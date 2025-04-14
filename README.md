@@ -1,30 +1,29 @@
-# SUMO + Gurobi Taxi Dispatch Optimization
-
+## SUMO + Gurobi Taxi Dispatch Optimization
 ---
-This project demonstrates how to use [SUMO (Simulation of Urban MObility)](https://www.eclipse.org/sumo/) alongside the [Gurobi](https://www.gurobi.com/) solver to perform vehicle-user matching and routing optimization.
-Users appear as taxi reservations in the SUMO simulation, and we solve an integer programming problem (MILP) to assign vehicles to user while respecting constraints like **detour ratios**.
+This project demonstrates how to use [SUMO (Simulation of Urban MObility)](https://www.eclipse.org/sumo/) alongside the [Gurobi](https://www.gurobi.com/) solver to perform vehicle-user matching and routing optimization.  
+Users appear as taxi reservations in the SUMO simulation, and we solve a mixed-integer linear programming (MILP) problem to assign vehicles to users while respecting constraints such as **detour ratios**.
 
 ![video.gif](./result/video.gif)
 ---
-## In English :uk:
-## Local installation
-### Download this project
+### In English :uk:
+#### Local installation
+##### Download this project
 ```bash
 git clone git@github.com:2jungeuni/carpooling-gurobipy.git
 ```
-### Create a conda environment
+##### Create a conda environment
 ```bash
 cd ./carpooling-gurobipy
 conda env create -f environment.yaml
 conda activate flow
 ```
-### Get the Gurobi license
+##### Get the Gurobi license
 It is recommended to follow the installation instructions provided in the [video](https://www.youtube.com/watch?v=OYuOKXPJ5PI).
 
-### Install SUMO
+##### Install SUMO
 It is recommended to follow the installation instructions provided in the official [SUMO documentation](https://sumo.dlr.de/docs/Installing/index.html).
 
-## Experiments
+#### Experiments
 1. **SUMO Simulation**
 `main.py` starts SUMO (in GUI mode here) and reads the positions of vehicles and user reservations each time step.
 ```bash
@@ -37,25 +36,25 @@ If a user's detour ratio is too high, that user may be removed from the matching
 After each optimization step, the script displays tabulated data regarding assigned users (waiting time, travel time, detour ratio) and the route each vehicle will take.
 
 ---
-## In Korean :kr:
-## 설치 방법
-### 프로젝트 다운로드
+### In Korean :kr:
+#### 설치 방법
+##### 프로젝트 다운로드
 ```bash
 git clone git@github.com:2jungeuni/carpooling-gurobipy.git
 ```
-### Conda 환경 생성
+##### Conda 환경 생성
 ```bash
 cd ./carpooling-gurobipy
 conda env create -f environment.yaml
 conda activate flow
 ```
-### Gurobi 라이선스 받기
+##### Gurobi 라이선스 받기
 [영상](https://www.youtube.com/watch?v=OYuOKXPJ5PI)의 설치 지침을 따르는 것을 권장합니다.
 
-### SUMO 설치
+##### SUMO 설치
 [공식 SUMO 문서](https://sumo.dlr.de/docs/Installing/index.html)을 따르는 것을 권장합니다.
 
-### 실험 방법
+##### 실험 방법
 1. **SUMO 시뮬레이션**
 `main.py`는 SUMO를 실행하고, 각 시뮬레이션 스텝마다차량과 사용자(예약) 정보를 읽어옵니다.
 ```bash
