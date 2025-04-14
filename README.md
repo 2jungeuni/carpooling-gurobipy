@@ -18,7 +18,7 @@ conda env create -f environment.yaml
 conda activate flow
 ```
 ##### Get the Gurobi license
-It is recommended to follow the installation instructions provided in the [video](https://www.youtube.com/watch?v=OYuOKXPJ5PI).
+It is recommended to follow the <small>installation</small> instructions provided in the [video](https://www.youtube.com/watch?v=OYuOKXPJ5PI).
 
 ##### Install SUMO
 It is recommended to follow the installation instructions provided in the official [SUMO documentation](https://sumo.dlr.de/docs/Installing/index.html).
