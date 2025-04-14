@@ -2,7 +2,7 @@
 
 ---
 This project demonstrates how to use [SUMO (Simulation of Urban MObility)](https://www.eclipse.org/sumo/) alongside the [Gurobi](https://www.gurobi.com/) solver to perform vehicle-user matching and routing optimization.
-Users appear as taxi reservations in the SUMO simulation, and we solve an integer programming problem (MILP) to assign vehicles to user whiel respecting constraints like **detour ratios**.
+Users appear as taxi reservations in the SUMO simulation, and we solve an integer programming problem (MILP) to assign vehicles to user while respecting constraints like **detour ratios**.
 
 ![video.gif](./result/video.gif)
 ---
