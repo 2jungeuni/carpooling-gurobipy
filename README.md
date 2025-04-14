@@ -1,7 +1,8 @@
-# carpooling-gurobipy
+# SUMO + Gurobi Taxi Dispatch Optimization
 
 ---
-The experiment optimize real-time matching of ride-hailing vehicles to service requests using the Gurobi solver.
+This project demonstrates how to use [SUMO (Simulation of Urban MObility)](https://www.eclipse.org/sumo/) alongside the [Gurobi](https://www.gurobi.com/) solver to perform vehicle-user matching and routing optimization.
+Users appear as taxi reservations in the SUMO simulation, and we solve an integer programming problem (MILP) to assign vehicles to user whiel respecting constraints like **detour ratios**.
 
 ![video.gif](./result/video.gif)
 ---
@@ -24,14 +25,16 @@ It is recommended to follow the installation instructions provided in the [video
 It is recommended to follow the installation instructions provided in the official [SUMO documentation](https://sumo.dlr.de/docs/Installing/index.html).
 
 ## Experiments
+1. **SUMO Simulation**
+`main.py` starts SUMO (in GUI mode here) and reads the positions of vehicles and user reservations each time step.
 ```bash
 python3 main.py
 ```
-- Each system request has a pick-up location and a drop-off location (```./env/large_scale/osm.person.xml```).
-- A vehicle waits at the desired location and moves to the pick-up location as soon as passenger is matched (```./env/large_scale/osm.rou.xml```).
-- Each passenger cannot travel directly from their pick-up location to their drop-off location when sharing the ride with other passengers. This inevitably results in detours, and our system is designed to reject matches when the detours are excessive.
-  - The detour ratio is defined as the travel time of the detour divided by the travel time of a solo ride.
-  - A match is rejected if the detour ratio exceeds 3.0.
+2. **Gurobi Optimization**
+`opt.py` defines a MILP for matching vehicles to user requests (pick-up & drop-off points) and sets an allowed detour threshold.
+If a user's detour ratio is too high, that user may be removed from the matching solution.
+3. **Terminal Output**
+After each optimization step, the script displays tabulated data regarding assigned users (waiting time, travel time, detour ratio) and the route each vehicle will take.
 
 ---
 ## In Korean :kr:
@@ -53,12 +56,13 @@ conda activate flow
 [공식 SUMO 문서](https://sumo.dlr.de/docs/Installing/index.html)을 따르는 것을 권장합니다.
 
 ### 실험 방법
+1. **SUMO 시뮬레이션**
+`main.py`는 SUMO를 실행하고, 각 시뮬레이션 스텝마다차량과 사용자(예약) 정보를 읽어옵니다.
 ```bash
 python3 main.py
 ```
-- 각 시스템 요청은 탑승 위치와 하차 위치를 포함합니다 (```./env/large_scale/osm.person.xml```).
-- 차량은 지정된 위치에서 대기하며, 승객이 매칭되면 즉시 픽업 위치로 이동합니다 (```./env/large_scale/osm.rou.xml```).
-- 승객은 다른 승객과 함께 탑승할 경우 탑승 위치에서 하차ㅇ 위치로 바로 이동할 수 없으며, 이는 필연적으로 우회 경로를 발생시킵니다. 본 시스템은 우회가 과도할 경우 매칭을 거부하도록 설계하였습니다.
-  - 우회율(detour ratio)는 우회 경로의 주행 시간을 단독 주행 시 소요되는 시간으로 나눈 값으로 정의합니다.
-  - 우회율 (detour ratio)이 3.0을 초과하면 매칭이 거부됩니다.
-
+2. **Gurobi 최적화**
+`opt.py`에서는 차량과 사용자 요청(픽업, 드롭오프 지점)을 미챙하기 위한 MILP(혼합정수계획) 모델을 정의하며, 허용 가능한 우회 비율을 설정합니다.
+만약 특정 사용자의 우회 비율이 지나치게 높으면 최적해에서 해당 사용자를 제외할 수 있습니다.
+3. **터미널 출력**
+각 최적화 단계를 거칠 때마다, 스크립트는 할당된 사용자들의 대기 시간, 이동 시간, 우회 비율 및 각 차량이 이동할 경롤르 표 형태로 터미널에 출력합니다.
